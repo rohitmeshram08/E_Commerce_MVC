@@ -1,0 +1,167 @@
+﻿
+@{
+    ViewBag.Title = "Admin_catlog_Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="float-sm-right mr-1">
+                <a href="@Url.Action("Admin_catlog_Add_Category","Admin_Catlog")">
+                    <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Add New">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </a>
+                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Refresh">
+                    <i class="fas fa-sync"></i>
+                </button>
+
+                <button type="button" class="btn btn-secondary" " data-toggle="tooltip" data-placement="top" title="Delete Item">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard v1</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content  write everythig inside this main content -->
+    <!-- main content start -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col col-lg-9 col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Category List</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table class="table table-bordered " id="myTable">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 5%"><input type="checkbox"></th>
+                                        <th style="width: 15%">Image</th>
+                                        <th style="width: 16%">Product Name</th>
+                                        <th style="width: 12%">Model</th>
+                                        <th style="width: 11%">Price</th>
+                                        <th style="width: 8%">Quantity</th>
+                                        <th style="width: 8%">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <!-- Row-1 -->
+                                    <!-- <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td class="text-center"><img
+                                                src="https://demo.opencart.com/image/cache/catalog/demo/apple_cinema_30-40x40.jpg"
+                                                alt="Apple Cinema 30&quot;" class="img-thumbnail">
+                                        </td>
+                                        <td class="text-start">Apple Cinema 30"
+                                            <br>
+                                            <small class="text-success">Enabled</small>
+                                        </td>
+                                        <td class="text-start d-none d-lg-table-cell">Product 15</td>
+                                        <td class="text-end">
+                                            <span>$100.00</span>
+                                        </td>
+
+                                        <td class="text-center">234</td>
+                                        <td><i class="fas fa-pencil-alt"></i></td>
+                                    </tr> -->
+                                    <!-- Row-6 -->
+                                    <!-- Row-6 -->
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer clearfix">
+                            <ul class="pagination pagination-sm m-0 float-right">
+                                <li class="page-item"><a class="page-link" href="#">«</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">»</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div id="filter-product" class="col-lg-3 col-md-12 order-lg-last d-none d-lg-block mb-3">
+                    <div class="card">
+                        <div class="card-header"><i class="fas fa-filter"></i> Filter</div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="input-name" class="form-label">Product Name</label>
+                                <input type="text" name="filter_name" value="" placeholder="Product Name"
+                                       id="input-name" list="list-name" class="form-control">
+                                <datalist id="list-name"></datalist>
+                            </div>
+                            <div class="mb-3">
+                                <label for="input-model" class="form-label">Model</label> <input type="text"
+                                                                                                 name="filter_model" value="" placeholder="Model" id="input-model"
+                                                                                                 list="list-model" class="form-control">
+                                <datalist id="list-model"></datalist>
+                            </div>
+                            <div class="mb-3">
+                                <label for="input-price" class="form-label">Price</label> <input type="text"
+                                                                                                 name="filter_price" value="" placeholder="Price" id="input-price"
+                                                                                                 class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="input-quantity" class="form-label">Quantity</label> <input type="text" name="filter_quantity" value="" placeholder="Quantity"
+                                                                                                       id="input-quantity" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="input-status" class="form-label">Status</label> <select name="filter_status" id="input-status" class="form-select">
+                                    <option value=""></option>
+                                    <option value="1">Enabled</option>
+                                    <option value="0">Disabled</option>
+                                </select>
+                            </div>
+                            <div class="text-end">
+                                <button type="button" id="button-filter" class="btn btn-primary">
+                                    <i class="fas fa-filter"></i> Filter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+
+        <!-- /.container-fluid -->
+    </section>
+
+
+    <!-- main content end -->
+    <!-- /. main content  ended-->
+</div>
+<!-- /.content-wrapper -->

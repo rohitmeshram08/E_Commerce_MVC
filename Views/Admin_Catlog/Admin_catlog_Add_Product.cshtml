@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = "Add_Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="container-fluid">
+                    <div class="float-end">
+                        <button type="submit" form="form-category" data-bs-toggle="tooltip" title="" class="btn btn-primary" data-bs-original-title="Save" aria-label="Save"><i class="fas fa-save"></i></button>
+                        <a href="#" data-bs-toggle="tooltip" title="" class="btn btn-light" data-bs-original-title="Back" aria-label="Back"><i class="fas fa-reply"></i></a>
+                    </div>
+                    <h1>Categories</h1>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="">Home</a></li>
+                        <li class="breadcrumb-item"><a href="">Categories</a></li>
+                    </ol>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Catlog</li>
+                        <li class="breadcrumb-item active">Products</li>
+                        <li class="breadcrumb-item active"> Add Products</li>
+
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+
+    <!-- /.content-header -->
+    <!-- Main content  write everythig inside this main content -->
+    <!-- main content start -->
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="container-fluid">
+                <div class="card">
+                    <div class="card-header"><i class="fas fa-pencil-alt"></i> Add Category</div>
+                    <!-- /.card-header -->
+                    <div class="card-body" style="padding-top: 0px;">
+
+                        <div class="ml-3 mr-3">
+                            <!-- Row-1 -->
+                            <div class="form-row mt-3">
+                                <div class="col-md-3 text-left">
+                                    <label for="Product_Name" class="pr-5" style="font-weight: normal;">Product Name:</label>
+                                </div>
+                                <div class="col-md-9 ">
+                                    <input class="form-control" id="Product_Name" name="product_Name" placeholder="Product Name" required="required" type="text" value="">
+
+                                </div>
+                            </div>
+                            <!-- Row-2 -->
+                            <div class="form-row mt-3">
+                                <div class="col-md-3 text-left">
+                                    <label for="Category_Name" class="pr-5" style="font-weight: normal;">Category Name:</label>
+                                </div>
+                                <div class="col-md-9 ">
+                                    <input class="form-control" data-val="true" data-val-number="The field categoryId must be a number." data-val-required="The categoryId field is required." id="Category_Name" name="categoryId" placeholder="Category Name" required="required" type="text" value="">
+
+                                </div>
+                            </div>
+
+                            <!-- Row-3 -->
+                            <div class="form-row mt-3">
+                                <div class="col-md-3 text-left">
+                                    <label for="Store_Name" class="pr-5" style="font-weight: normal;">Store Name:</label>
+                                </div>
+                                <div class="col-md-9 ">
+                                    <input class="form-control" data-val="true" data-val-number="The field storeId must be a number." data-val-required="The storeId field is required." id="Store_Name" name="storeId" placeholder="Store Name" required="required" type="text" value="">
+
+                                </div>
+                            </div>
+
+                            <!-- Row-4 -->
+                            <div class="form-row mt-3">
+                                <div class="col-md-3 text-left">
+                                    <label for="Price" class="pr-5" style="font-weight: normal;">Price:</label>
+                                </div>
+                                <div class="col-md-9 ">
+                                    <input class="form-control" data-val="true" data-val-number="The field price must be a number." data-val-required="The price field is required." id="Price" name="price" placeholder="Price" required="required" type="text" value="">
+
+                                </div>
+                            </div>
+
+                            <!-- Row-5 -->
+                            <div class="form-row mt-3">
+                                <div class="col-md-3 text-left">
+                                    <label for="Quantity" class="pr-5" style="font-weight: normal;">Quantity:</label>
+                                </div>
+                                <div class="col-md-9 ">
+                                    <input class="form-control" data-val="true" data-val-number="The field quantity must be a number." data-val-required="The quantity field is required." id="Quantity" name="quantity" placeholder="Quantity" required="required" type="text" value="">
+                                </div>
+                            </div>
+
+                            <!-- Row-6 -->
+                            <div class="form-row mt-3">
+                                <div class="col-md-3 text-left">
+                                    <label for="Description" class="pr-5" style="font-weight: normal;">Description:</label>
+                                </div>
+                                <div class="col-md-9 ">
+                                    <input class="form-control" id="Description" name="description" placeholder="Description" required="required" type="text" value="">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- main content end -->
+    <!-- /. main content  ended-->
+</div>
+<!-- /.content-wrapper ends here  -->

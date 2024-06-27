@@ -1,0 +1,161 @@
+﻿
+@{
+    ViewBag.Title = "Admin_Sales_Orders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<  <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="float-sm-right mr-1">
+                <a href="@Url.Action("Add_Orders")">
+                    <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Add New">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </a>
+                <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Refresh">
+                    <i class="fas fa-sync"></i>
+                </button>
+
+                <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Delete Item">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Orders</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard v1</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content  write everythig inside this main content -->
+    <!-- main content start -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col col-lg-9 col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Category List</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table class="table table-bordered" id="orderTable">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 5%"><input type="checkbox"></th>
+                                        <th style="width: 8%">Order ID</th>
+                                        <th style="width: 8%">Store</th>
+                                        <th style="width:7%">Customer</th>
+                                        <th style="width: 9%">Status</th>
+                                        <th style="width: 8%">Total</th>
+                                        <th style="width: 8%">Date Added</th>
+                                        <th style="width: 8%">Date modified</th>
+                                        <th style="width: 8%">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <!-- Row-1 -->
+                                    <!-- <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td class="text-center">2656 </td>
+                                        <td class="text-start">Your Store</td>
+                                        <td class="text-start d-none d-lg-table-cell">adolfo gustavo</td>
+                                        <td class="text-end"><span >Processed</span></td>
+                                        <td class="text-center">$606.76 </td>
+                                        <td class="text-center">18/02/2024</td>
+                                        <td class="text-center">20/02/2024</td>
+                                        <td><i class=" fas fa-pencil-alt"></i></td>
+                                    </tr> -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer clearfix">
+                            <ul class="pagination pagination-sm m-0 float-right">
+                                <li class="page-item"><a class="page-link" href="#">«</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">»</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="filter-product" class="col-lg-3 col-md-12 order-lg-last d-none d-lg-block mb-3">
+                    <div class="card">
+                        <div class="card-header"><i class="fas fa-filter"></i> Filter</div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="input-name" class="form-label">Order ID</label>
+                                <input type="text" name="filter_name" value="" placeholder=" Order ID"
+                                       id="input-name" list="list-name" class="form-control">
+                                <datalist id="list-name"></datalist>
+                            </div>
+                            <div class="mb-3">
+                                <label for="input-model" class="form-label">Customer</label> <input type="text"
+                                                                                                    name="filter_model" value="" placeholder="customer" id="input-model"
+                                                                                                    list="list-model" class="form-control">
+                                <datalist id="list-model"></datalist>
+                            </div>
+                            <div class="mb-3">
+                                <label for="input-price" class="form-label">Store</label> <input type="text"
+                                                                                                 name="filter_price" value="" placeholder="Store" id="input-price"
+                                                                                                 class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="input-quantity" class="form-label">Order Status</label>
+                                <select name="filter_order_status_id" id="input-order-status" class="form-select">
+                                    <option value=""></option>
+                                    <option value="0">Missing Orders</option>
+                                    <option value="7">Canceled</option>
+                                    <option value="9">Canceled Reversal</option>
+                                    <option value="13">Chargeback</option>
+                                    <option value="5">Complete</option>
+                                    <option value="8">Denied</option>
+                                    <option value="14">Expired</option>
+                                    <option value="10">Failed</option>
+                                    <option value="1">Pending</option>
+                                    <option value="15">Processed</option>
+                                    <option value="2">Processing</option>
+                                    <option value="11">Refunded</option>
+                                    <option value="12">Reversed</option>
+                                    <option value="3">Shipped</option>
+                                    <option value="16">Voided</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="input-status" class="form-label">Status</label> <select name="filter_status" id="input-status" class="form-select">
+                                    <option value=""></option>
+                                    <option value="1">Enabled</option>
+                                    <option value="0">Disabled</option>
+                                </select>
+                            </div>
+                            <div class="text-end">
+                                <button type="button" id="button-filter" class="btn btn-primary">
+                                    <i class="fas fa-filter"></i> Filter
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- /.container-fluid -->
+    </section>
+
+    <!-- main content end -->
+    <!-- /. main content  ended-->
+</div>
+<!-- /.content-wrapper -->
